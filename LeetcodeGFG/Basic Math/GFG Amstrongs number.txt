@@ -1,0 +1,26 @@
+// User function Template for Java
+class Solution {
+    
+    public static int power(int n, int pow){
+        int ans=1;
+        while(pow!=0){
+            ans*=n;
+            pow--;
+        }
+        return ans;
+    }
+    
+    static boolean armstrongNumber(int n) {
+        // code here
+        int sum=0;
+        int num=n;
+        while(num!=0){
+            int ldp = power(num%10,3);
+            sum+=ldp;
+            num=num/10;
+        }
+        
+        if(sum==n) return true;
+        else return false;
+    }
+}
