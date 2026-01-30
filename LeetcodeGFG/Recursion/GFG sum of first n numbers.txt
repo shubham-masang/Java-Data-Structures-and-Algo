@@ -1,0 +1,15 @@
+class Solution {
+    
+    public static int getSum(int sum,int n){
+        if(n==0) return sum;
+        
+        return getSum(sum+n,n-1);
+    }
+    
+    public static int findSum(int n) {
+        // code here
+        int sum = getSum(0,n);
+        
+        return sum;
+    }
+}
