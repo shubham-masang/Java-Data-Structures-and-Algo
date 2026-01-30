@@ -1,0 +1,26 @@
+class Solution {
+    
+    public static void reverseArrayRec(int arr[], int i){
+        int n = arr.length;
+        
+        //base condition
+        if(i>n-i-1) return;
+        
+        //Swap
+        int temp = arr[n-i-1];
+        arr[n-i-1]= arr[i];
+        arr[i] = temp;
+        
+        //recursion
+        reverseArrayRec(arr, i+1);
+        
+        
+    }
+    
+    //code function
+    public void reverseArray(int arr[]) {
+        // code here
+        reverseArrayRec(arr,0);
+        
+    }
+}
