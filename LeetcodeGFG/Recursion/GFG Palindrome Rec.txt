@@ -1,0 +1,19 @@
+class Solution {
+
+    public static boolean helper(int start, int end, String str) {
+        if (start > end)
+            return true;
+        if (!Character.isLetterOrDigit(str.charAt(start)))
+            return helper(start + 1, end, str);
+        if (!Character.isLetterOrDigit(str.charAt(end)))
+            return helper(start, end - 1, str);
+        if (Character.toLowerCase(str.charAt(start)) != Character.toLowerCase(str.charAt(end)))
+            return false;
+        return helper(start + 1, end - 1, str);
+    }
+
+    public boolean isPalindrome(String s) {
+        int n = s.length();
+        return helper(0, n - 1,s);
+    }
+}
