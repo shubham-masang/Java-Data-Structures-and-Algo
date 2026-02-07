@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class ImpSorts {
 
     static void performBS(ArrayList<Integer> arr) {
-        for (int i = 1; i < arr.size(); i++) {
-            for (int j = 0; j < arr.size() - i; j++) {
+        for (int i = 0; i < arr.size() - 1; i++) {
+            for (int j = 0; j < arr.size() - i - 1; j++) {
                 if (arr.get(j) > arr.get(j + 1)) {
                     Integer temp = arr.get(j);
                     arr.set(j, arr.get(j + 1));
@@ -51,9 +51,9 @@ public class ImpSorts {
         arr.add(4);
 
         System.out.println(arr);
-        //performBS(arr);
+        performBS(arr);
         //performSelectionSort(arr);
-        performInsertionSort(arr);
+        //performInsertionSort(arr);
         System.out.println("--------------------------------------");
         System.out.println(arr);
     }
