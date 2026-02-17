@@ -21,12 +21,14 @@ class Solution {
                 sum+=arr[i];
         }
 
+        //initialize maxSum with sum
         maxSum=sum;
 
+        //Slide window accross the array
         for(int i=k;i<n;i++){
-            sum+=arr[i];
-            sum-=arr[i-k];
-            if(sum>maxSum) maxSum=sum;
+            sum-=arr[i-k]; //Remove the element leaving the window
+            sum+=arr[i]; //Add new element entering window
+            if(sum>maxSum) maxSum=sum; //Update maxSum
         }
         
         maxAvg = (double)maxSum / k;
